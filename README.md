@@ -2,7 +2,7 @@
 
 Multi-agent orchestration demos using the AWS Strands Agents SDK — three domain-specific orchestrators (travel planner, content production, customer support) each coordinating specialist sub-agents via tool calls, with a streaming Angular chat UI.
 
-![Architecture](architecture.svg)
+![Architecture](architecture_system_overview.svg)
 
 ---
 

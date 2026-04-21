@@ -1,0 +1,198 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="740" viewBox="0 0 1100 740" font-family="'Segoe UI', Arial, sans-serif">
+
+  <rect width="1100" height="740" fill="#f8f9fc" rx="12"/>
+
+  <!-- Title -->
+  <text x="550" y="44" text-anchor="middle" font-size="22" font-weight="700" fill="#1e1e2e">Orchestrator Agent — System Overview</text>
+  <text x="550" y="66" text-anchor="middle" font-size="13" fill="#6b7280">Multi-agent orchestration using AWS Strands Agents SDK · Bedrock · Claude Haiku</text>
+
+  <!-- ── FRONTEND ── -->
+  <rect x="50" y="88" width="1000" height="90" rx="10" fill="#dbe4ff" fill-opacity="0.5" stroke="#4a9eed" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="72" y="108" font-size="13" font-weight="600" fill="#1d3a8a">Frontend — Angular 20</text>
+  <rect x="370" y="115" width="360" height="48" rx="8" fill="#a5d8ff" stroke="#4a9eed" stroke-width="2"/>
+  <text x="550" y="136" text-anchor="middle" font-size="14" font-weight="700" fill="#1d3a8a">Angular Chat UI</text>
+  <text x="550" y="153" text-anchor="middle" font-size="11" fill="#1e40af">Agent selector · SSE streaming · Markdown rendering · Tool badges</text>
+
+  <!-- Arrow: Frontend → backends (three arrows down) -->
+  <line x1="222" y1="178" x2="222" y2="218" stroke="#4a9eed" stroke-width="2" marker-end="url(#arrB)"/>
+  <line x1="550" y1="178" x2="550" y2="218" stroke="#4a9eed" stroke-width="2" marker-end="url(#arrB)"/>
+  <line x1="878" y1="178" x2="878" y2="218" stroke="#4a9eed" stroke-width="2" marker-end="url(#arrB)"/>
+  <text x="222" y="202" text-anchor="middle" font-size="10" fill="#4a9eed">SSE :8020</text>
+  <text x="550" y="202" text-anchor="middle" font-size="10" fill="#4a9eed">SSE :8000</text>
+  <text x="878" y="202" text-anchor="middle" font-size="10" fill="#4a9eed">SSE :8010</text>
+
+  <!-- ── BACKEND ZONE ── -->
+  <rect x="50" y="218" width="1000" height="450" rx="10" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1.5"/>
+  <text x="72" y="238" font-size="13" font-weight="600" fill="#374151">Backend Services — BedrockAgentCoreApp · /invocations · CORS</text>
+
+  <!-- ===== CUSTOMER SUPPORT ===== -->
+  <rect x="70" y="250" width="300" height="390" rx="10" fill="#ffd8a8" fill-opacity="0.35" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="220" y="272" text-anchor="middle" font-size="14" font-weight="700" fill="#92400e">Customer Support</text>
+  <text x="220" y="288" text-anchor="middle" font-size="11" fill="#78350f">port 8020</text>
+
+  <rect x="90" y="298" width="260" height="55" rx="8" fill="#e5dbff" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="220" y="320" text-anchor="middle" font-size="13" font-weight="700" fill="#4c1d95">Orchestrator Agent</text>
+  <text x="220" y="336" text-anchor="middle" font-size="10" fill="#6d28d9">triage → resolve → respond</text>
+  <text x="220" y="349" text-anchor="middle" font-size="10" fill="#7c3aed">3 tools registered</text>
+
+  <line x1="155" y1="353" x2="118" y2="385" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrP)"/>
+  <line x1="220" y1="353" x2="220" y2="385" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrP)"/>
+  <line x1="285" y1="353" x2="322" y2="385" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrP)"/>
+
+  <rect x="82" y="385" width="92" height="52" rx="7" fill="#fff3e0" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="128" y="406" text-anchor="middle" font-size="11" font-weight="600" fill="#92400e">triage_agent</text>
+  <text x="128" y="420" text-anchor="middle" font-size="10" fill="#78350f">classify</text>
+  <text x="128" y="432" text-anchor="middle" font-size="10" fill="#78350f">+ urgency</text>
+
+  <rect x="174" y="385" width="92" height="52" rx="7" fill="#fff3e0" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="220" y="406" text-anchor="middle" font-size="11" font-weight="600" fill="#92400e">faq_agent</text>
+  <text x="220" y="420" text-anchor="middle" font-size="10" fill="#78350f">resolve</text>
+  <text x="220" y="432" text-anchor="middle" font-size="10" fill="#78350f">billing/tech</text>
+
+  <rect x="266" y="385" width="92" height="52" rx="7" fill="#fff3e0" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="312" y="406" text-anchor="middle" font-size="11" font-weight="600" fill="#92400e">escalation</text>
+  <text x="312" y="420" text-anchor="middle" font-size="10" fill="#78350f">draft reply</text>
+  <text x="312" y="432" text-anchor="middle" font-size="10" fill="#78350f">or escalate</text>
+
+  <!-- CS Output -->
+  <rect x="110" y="458" width="220" height="40" rx="7" fill="#c3fae8" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="220" y="473" text-anchor="middle" font-size="12" font-weight="600" fill="#065f46">Customer Reply /</text>
+  <text x="220" y="487" text-anchor="middle" font-size="12" font-weight="600" fill="#065f46">Escalation Note</text>
+
+  <!-- CS Bedrock badge -->
+  <rect x="100" y="510" width="240" height="36" rx="7" fill="#f3e8ff" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="220" y="526" text-anchor="middle" font-size="11" font-weight="600" fill="#4c1d95">AWS Bedrock</text>
+  <text x="220" y="540" text-anchor="middle" font-size="10" fill="#6d28d9">Claude Haiku · eu-west-1</text>
+
+  <!-- CS Strands badge -->
+  <rect x="100" y="555" width="240" height="36" rx="7" fill="#fff7ed" stroke="#f59e0b" stroke-width="1"/>
+  <text x="220" y="571" text-anchor="middle" font-size="11" font-weight="600" fill="#92400e">Strands Agents SDK</text>
+  <text x="220" y="585" text-anchor="middle" font-size="10" fill="#78350f">@tool · Agent · stream_async()</text>
+
+  <!-- CS Docker badge -->
+  <rect x="100" y="600" width="240" height="30" rx="7" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="1"/>
+  <text x="220" y="620" text-anchor="middle" font-size="11" fill="#0369a1">Docker · Dockerfile</text>
+
+  <!-- ===== CONTENT PRODUCTION ===== -->
+  <rect x="400" y="250" width="300" height="390" rx="10" fill="#dbe4ff" fill-opacity="0.35" stroke="#4a9eed" stroke-width="1.5"/>
+  <text x="550" y="272" text-anchor="middle" font-size="14" font-weight="700" fill="#1d3a8a">Content Production</text>
+  <text x="550" y="288" text-anchor="middle" font-size="11" fill="#1e40af">port 8000</text>
+
+  <rect x="420" y="298" width="260" height="55" rx="8" fill="#e5dbff" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="550" y="320" text-anchor="middle" font-size="13" font-weight="700" fill="#4c1d95">Orchestrator Agent</text>
+  <text x="550" y="336" text-anchor="middle" font-size="10" fill="#6d28d9">research → analyse → write</text>
+  <text x="550" y="349" text-anchor="middle" font-size="10" fill="#7c3aed">3 tools registered</text>
+
+  <line x1="485" y1="353" x2="448" y2="385" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrP)"/>
+  <line x1="550" y1="353" x2="550" y2="385" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrP)"/>
+  <line x1="615" y1="353" x2="652" y2="385" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrP)"/>
+
+  <rect x="412" y="385" width="92" height="52" rx="7" fill="#fff3e0" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="458" y="406" text-anchor="middle" font-size="11" font-weight="600" fill="#92400e">research</text>
+  <text x="458" y="420" text-anchor="middle" font-size="10" fill="#78350f">facts +</text>
+  <text x="458" y="432" text-anchor="middle" font-size="10" fill="#78350f">sources</text>
+
+  <rect x="504" y="385" width="92" height="52" rx="7" fill="#fff3e0" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="550" y="406" text-anchor="middle" font-size="11" font-weight="600" fill="#92400e">analyst</text>
+  <text x="550" y="420" text-anchor="middle" font-size="10" fill="#78350f">themes +</text>
+  <text x="550" y="432" text-anchor="middle" font-size="10" fill="#78350f">insights</text>
+
+  <rect x="596" y="385" width="92" height="52" rx="7" fill="#fff3e0" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="642" y="406" text-anchor="middle" font-size="11" font-weight="600" fill="#92400e">writer</text>
+  <text x="642" y="420" text-anchor="middle" font-size="10" fill="#78350f">polished</text>
+  <text x="642" y="432" text-anchor="middle" font-size="10" fill="#78350f">content</text>
+
+  <!-- http_request badge on research -->
+  <rect x="420" y="440" width="84" height="16" rx="3" fill="#dbe4ff" stroke="#4a9eed" stroke-width="1"/>
+  <text x="462" y="451" text-anchor="middle" font-size="9" fill="#1d3a8a">http_request</text>
+
+  <!-- CP Output -->
+  <rect x="440" y="460" width="220" height="40" rx="7" fill="#c3fae8" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="550" y="475" text-anchor="middle" font-size="12" font-weight="600" fill="#065f46">Published Article /</text>
+  <text x="550" y="489" text-anchor="middle" font-size="12" font-weight="600" fill="#065f46">Written Content</text>
+
+  <rect x="430" y="510" width="240" height="36" rx="7" fill="#f3e8ff" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="550" y="526" text-anchor="middle" font-size="11" font-weight="600" fill="#4c1d95">AWS Bedrock</text>
+  <text x="550" y="540" text-anchor="middle" font-size="10" fill="#6d28d9">Claude Haiku · eu-west-1</text>
+
+  <rect x="430" y="555" width="240" height="36" rx="7" fill="#fff7ed" stroke="#f59e0b" stroke-width="1"/>
+  <text x="550" y="571" text-anchor="middle" font-size="11" font-weight="600" fill="#92400e">Strands Agents SDK</text>
+  <text x="550" y="585" text-anchor="middle" font-size="10" fill="#78350f">@tool · Agent · stream_async()</text>
+
+  <rect x="430" y="600" width="240" height="30" rx="7" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="1"/>
+  <text x="550" y="620" text-anchor="middle" font-size="11" fill="#0369a1">Docker · Dockerfile</text>
+
+  <!-- ===== TRAVEL PLANNER ===== -->
+  <rect x="730" y="250" width="300" height="390" rx="10" fill="#d3f9d8" fill-opacity="0.45" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="880" y="272" text-anchor="middle" font-size="14" font-weight="700" fill="#065f46">Travel Planner</text>
+  <text x="880" y="288" text-anchor="middle" font-size="11" fill="#047857">port 8010</text>
+
+  <rect x="750" y="298" width="260" height="55" rx="8" fill="#e5dbff" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="880" y="320" text-anchor="middle" font-size="13" font-weight="700" fill="#4c1d95">Orchestrator Agent</text>
+  <text x="880" y="336" text-anchor="middle" font-size="10" fill="#6d28d9">research → plan → pack</text>
+  <text x="880" y="349" text-anchor="middle" font-size="10" fill="#7c3aed">3 tools registered</text>
+
+  <line x1="815" y1="353" x2="778" y2="385" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrP)"/>
+  <line x1="880" y1="353" x2="880" y2="385" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrP)"/>
+  <line x1="945" y1="353" x2="982" y2="385" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrP)"/>
+
+  <rect x="742" y="385" width="92" height="52" rx="7" fill="#fff3e0" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="788" y="404" text-anchor="middle" font-size="10" font-weight="600" fill="#92400e">destination</text>
+  <text x="788" y="416" text-anchor="middle" font-size="10" font-weight="600" fill="#92400e">researcher</text>
+  <text x="788" y="430" text-anchor="middle" font-size="10" fill="#78350f">visa/climate</text>
+
+  <rect x="834" y="385" width="92" height="52" rx="7" fill="#fff3e0" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="880" y="406" text-anchor="middle" font-size="11" font-weight="600" fill="#92400e">trip_planner</text>
+  <text x="880" y="420" text-anchor="middle" font-size="10" fill="#78350f">day-by-day</text>
+  <text x="880" y="432" text-anchor="middle" font-size="10" fill="#78350f">itinerary</text>
+
+  <rect x="926" y="385" width="92" height="52" rx="7" fill="#fff3e0" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="972" y="404" text-anchor="middle" font-size="10" font-weight="600" fill="#92400e">product</text>
+  <text x="972" y="416" text-anchor="middle" font-size="10" font-weight="600" fill="#92400e">recommender</text>
+  <text x="972" y="430" text-anchor="middle" font-size="10" fill="#78350f">packing list</text>
+
+  <!-- http_request badge on destination_researcher -->
+  <rect x="750" y="440" width="84" height="16" rx="3" fill="#dbe4ff" stroke="#4a9eed" stroke-width="1"/>
+  <text x="792" y="451" text-anchor="middle" font-size="9" fill="#1d3a8a">http_request</text>
+
+  <!-- TP Output -->
+  <rect x="770" y="460" width="220" height="40" rx="7" fill="#c3fae8" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="880" y="475" text-anchor="middle" font-size="12" font-weight="600" fill="#065f46">Complete Travel Plan</text>
+  <text x="880" y="489" text-anchor="middle" font-size="12" font-weight="600" fill="#065f46">+ Packing List</text>
+
+  <rect x="760" y="510" width="240" height="36" rx="7" fill="#f3e8ff" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="880" y="526" text-anchor="middle" font-size="11" font-weight="600" fill="#4c1d95">AWS Bedrock</text>
+  <text x="880" y="540" text-anchor="middle" font-size="10" fill="#6d28d9">Claude Haiku · eu-west-1</text>
+
+  <rect x="760" y="555" width="240" height="36" rx="7" fill="#fff7ed" stroke="#f59e0b" stroke-width="1"/>
+  <text x="880" y="571" text-anchor="middle" font-size="11" font-weight="600" fill="#92400e">Strands Agents SDK</text>
+  <text x="880" y="585" text-anchor="middle" font-size="10" fill="#78350f">@tool · Agent · stream_async()</text>
+
+  <rect x="760" y="600" width="240" height="30" rx="7" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="1"/>
+  <text x="880" y="620" text-anchor="middle" font-size="11" fill="#0369a1">Docker · Dockerfile</text>
+
+  <!-- Response arrows back up to frontend -->
+  <line x1="222" y1="458" x2="222" y2="500" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="550" y1="458" x2="550" y2="500" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="878" y1="458" x2="878" y2="500" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="5,3"/>
+
+  <!-- docker-compose note -->
+  <rect x="380" y="668" width="340" height="30" rx="8" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="1.5"/>
+  <text x="550" y="688" text-anchor="middle" font-size="12" font-weight="600" fill="#0369a1">docker-compose.yml — orchestrates all three services</text>
+
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#555"/>
+    </marker>
+    <marker id="arrP" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#8b5cf6"/>
+    </marker>
+    <marker id="arrG" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#22c55e"/>
+    </marker>
+    <marker id="arrB" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4a9eed"/>
+    </marker>
+  </defs>
+
+</svg>
