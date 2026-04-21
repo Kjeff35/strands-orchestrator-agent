@@ -2,6 +2,8 @@
 
 A multi-agent travel planning pipeline that coordinates destination research, itinerary building, and gear recommendations into a single cohesive travel plan.
 
+![Architecture](architecture_travel_planner.svg)
+
 ## How It Works
 
 ```
