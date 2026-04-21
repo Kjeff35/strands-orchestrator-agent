@@ -1,0 +1,62 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+
+# uv / pip
+.uv/
+pip-wheel-metadata/
+
+# pytest / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Node / Angular
+node_modules/
+dist/
+.angular/
+*.tsbuildinfo
+
+# Angular build output
+orchestrator-agent-frontend/dist/
+
+# Docker
+.dockerignore
+
+# AWS credentials (never commit)
+.aws/
+*.pem
+credentials
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+logs/
+
+# Misc
+*.tmp
+~$*

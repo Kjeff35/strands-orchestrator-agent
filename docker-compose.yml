@@ -1,0 +1,51 @@
+services:
+
+  content-production:
+    build:
+      context: ./orchestrator-agent-backend/content_production
+    ports:
+      - "8000:8000"
+    environment:
+      AWS_REGION: ${AWS_REGION:-eu-west-1}
+      MODEL_ID: ${MODEL_ID:-eu.anthropic.claude-haiku-4-5-20251001-v1:0}
+      ORCHESTRATOR_PORT: 8000
+    volumes:
+      - ~/.aws:/root/.aws:ro
+    restart: unless-stopped
+
+  travel-planner:
+    build:
+      context: ./orchestrator-agent-backend/travel_planner
+    ports:
+      - "8010:8010"
+    environment:
+      AWS_REGION: ${AWS_REGION:-eu-west-1}
+      MODEL_ID: ${MODEL_ID:-eu.anthropic.claude-haiku-4-5-20251001-v1:0}
+      ORCHESTRATOR_PORT: 8010
+    volumes:
+      - ~/.aws:/root/.aws:ro
+    restart: unless-stopped
+
+  customer-support:
+    build:
+      context: ./orchestrator-agent-backend/customer_support
+    ports:
+      - "8020:8020"
+    environment:
+      AWS_REGION: ${AWS_REGION:-eu-west-1}
+      MODEL_ID: ${MODEL_ID:-eu.anthropic.claude-haiku-4-5-20251001-v1:0}
+      ORCHESTRATOR_PORT: 8020
+    volumes:
+      - ~/.aws:/root/.aws:ro
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./orchestrator-agent-frontend
+    ports:
+      - "4200:80"
+    depends_on:
+      - content-production
+      - travel-planner
+      - customer-support
+    restart: unless-stopped
