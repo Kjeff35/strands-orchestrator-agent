@@ -1,0 +1,71 @@
+@if (agent) {
+  <div class="chat-page">
+    <header class="chat-header">
+      <button class="back-btn" (click)="back()">← Back</button>
+      <div class="agent-title">
+        <span class="agent-icon">{{ agent.icon }}</span>
+        <div>
+          <h1>{{ agent.name }}</h1>
+          <span class="agent-url">{{ agent.baseUrl }}</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="message-list" #messageList>
+      @if (messages.length === 0) {
+        <div class="empty-state">
+          <p>Start a conversation or try one of these:</p>
+          <div class="example-prompts">
+            @for (prompt of agent.examplePrompts; track prompt) {
+              <button class="prompt-chip" (click)="usePrompt(prompt)">{{ prompt }}</button>
+            }
+          </div>
+        </div>
+      }
+
+      @for (msg of messages; track $index) {
+        <div class="message" [class.user]="msg.role === 'user'" [class.assistant]="msg.role === 'assistant'">
+          @if (msg.role === 'assistant' && msg.toolCalls?.length) {
+            <div class="tool-calls">
+              @for (tool of msg.toolCalls!; track tool) {
+                <span class="tool-call">⚙ {{ tool }}</span>
+              }
+            </div>
+          }
+          <div class="message-bubble">
+            @if (msg.role === 'assistant') {
+              @if (msg.thinking) {
+                <p class="thinking-text">{{ msg.thinking }}</p>
+              }
+              @if (msg.content) {
+                <div class="message-text markdown" [innerHTML]="renderMarkdown(msg.content)"></div>
+              }
+            } @else {
+              <span class="message-text">{{ msg.content }}</span>
+            }
+            @if (msg.streaming && !msg.thinking && !msg.content) {
+              <span class="thinking">Thinking...</span>
+            }
+            @if (msg.streaming) {
+              <span class="cursor">▍</span>
+            }
+          </div>
+        </div>
+      }
+    </div>
+
+    <div class="input-bar">
+      <input
+        class="message-input"
+        type="text"
+        placeholder="Type a message..."
+        [(ngModel)]="input"
+        (keydown.enter)="send()"
+        [disabled]="streaming"
+      />
+      <button class="send-btn" (click)="send()" [disabled]="streaming || !input.trim()">
+        {{ streaming ? '...' : 'Send' }}
+      </button>
+    </div>
+  </div>
+}

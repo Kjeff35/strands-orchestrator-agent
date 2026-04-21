@@ -1,0 +1,24 @@
+<div class="selector-page">
+  <header class="selector-header">
+    <h1>Orchestrator Agents</h1>
+    <p>Choose an agent to start a conversation</p>
+  </header>
+
+  <div class="agent-grid">
+    @for (agent of agents; track agent.id) {
+      <button class="agent-card" (click)="select(agent)">
+        <span class="agent-icon">{{ agent.icon }}</span>
+        <div class="agent-info">
+          <h2>{{ agent.name }}</h2>
+          <p class="agent-desc">{{ agent.description }}</p>
+          <div class="agent-port">localhost:{{ agent.port }}</div>
+        </div>
+        <ul class="example-prompts">
+          @for (prompt of agent.examplePrompts; track prompt) {
+            <li>"{{ prompt }}"</li>
+          }
+        </ul>
+      </button>
+    }
+  </div>
+</div>
