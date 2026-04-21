@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="620" viewBox="0 0 860 620" font-family="'Segoe UI', Arial, sans-serif">
+
+  <rect width="860" height="620" fill="#f8f9fc" rx="12"/>
+
+  <text x="430" y="44" text-anchor="middle" font-size="20" font-weight="700" fill="#1e1e2e">Content Production — Orchestrator Architecture</text>
+
+  <!-- User Request -->
+  <rect x="310" y="70" width="240" height="56" rx="10" fill="#dbe4ff" stroke="#4a9eed" stroke-width="2"/>
+  <text x="430" y="98" text-anchor="middle" font-size="15" font-weight="600" fill="#1d3a8a">User Request</text>
+  <text x="430" y="116" text-anchor="middle" font-size="12" fill="#4a6fa5">"Write an article about AI"</text>
+
+  <!-- Arrow: User → Orchestrator -->
+  <line x1="430" y1="126" x2="430" y2="168" stroke="#555" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Orchestrator -->
+  <rect x="215" y="168" width="430" height="72" rx="10" fill="#e5dbff" stroke="#8b5cf6" stroke-width="2.5"/>
+  <text x="430" y="196" text-anchor="middle" font-size="17" font-weight="700" fill="#4c1d95">Orchestrator Agent</text>
+  <text x="430" y="216" text-anchor="middle" font-size="12" fill="#6d28d9">Calls each specialist in sequence, passing prior output as context</text>
+  <text x="430" y="232" text-anchor="middle" font-size="11" fill="#7c3aed">BedrockModel · Claude Haiku · system prompt</text>
+
+  <!-- Specialist zone -->
+  <rect x="50" y="300" width="760" height="215" rx="12" fill="#dbe4ff" fill-opacity="0.35" stroke="#4a9eed" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="72" y="320" font-size="13" font-weight="600" fill="#1d3a8a">Specialist Agents (called as tools by the orchestrator)</text>
+
+  <!-- Arrows: Orchestrator → Specialists (call) -->
+  <line x1="310" y1="240" x2="175" y2="338" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arrP)"/>
+  <line x1="430" y1="240" x2="430" y2="338" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arrP)"/>
+  <line x1="550" y1="240" x2="685" y2="338" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arrP)"/>
+
+  <!-- Call labels -->
+  <text x="224" y="284" text-anchor="middle" font-size="10" fill="#6d28d9">call 1</text>
+  <text x="452" y="278" text-anchor="middle" font-size="10" fill="#6d28d9">call 2 (+ research)</text>
+  <text x="634" y="284" text-anchor="middle" font-size="10" fill="#6d28d9">call 3 (+ analysis)</text>
+
+  <!-- Step numbers -->
+  <circle cx="230" cy="295" r="11" fill="#8b5cf6"/>
+  <text x="230" y="300" text-anchor="middle" font-size="11" font-weight="700" fill="white">1</text>
+  <circle cx="430" cy="290" r="11" fill="#8b5cf6"/>
+  <text x="430" y="295" text-anchor="middle" font-size="11" font-weight="700" fill="white">2</text>
+  <circle cx="628" cy="295" r="11" fill="#8b5cf6"/>
+  <text x="628" y="300" text-anchor="middle" font-size="11" font-weight="700" fill="white">3</text>
+
+  <!-- research_agent -->
+  <rect x="62" y="338" width="222" height="74" rx="10" fill="#fff3e0" stroke="#f59e0b" stroke-width="2"/>
+  <text x="173" y="362" text-anchor="middle" font-size="14" font-weight="700" fill="#92400e">research_agent</text>
+  <text x="173" y="380" text-anchor="middle" font-size="11" fill="#78350f">gathers facts, sources</text>
+  <text x="173" y="394" text-anchor="middle" font-size="11" fill="#78350f">and context</text>
+
+  <!-- analyst_agent -->
+  <rect x="319" y="338" width="222" height="74" rx="10" fill="#fff3e0" stroke="#f59e0b" stroke-width="2"/>
+  <text x="430" y="362" text-anchor="middle" font-size="14" font-weight="700" fill="#92400e">analyst_agent</text>
+  <text x="430" y="380" text-anchor="middle" font-size="11" fill="#78350f">extracts key themes</text>
+  <text x="430" y="394" text-anchor="middle" font-size="11" fill="#78350f">and insights</text>
+
+  <!-- writer_agent -->
+  <rect x="576" y="338" width="222" height="74" rx="10" fill="#fff3e0" stroke="#f59e0b" stroke-width="2"/>
+  <text x="687" y="362" text-anchor="middle" font-size="14" font-weight="700" fill="#92400e">writer_agent</text>
+  <text x="687" y="380" text-anchor="middle" font-size="11" fill="#78350f">produces polished</text>
+  <text x="687" y="394" text-anchor="middle" font-size="11" fill="#78350f">final content</text>
+
+  <!-- http_request badge on research_agent -->
+  <rect x="100" y="416" width="146" height="18" rx="4" fill="#dbe4ff" stroke="#4a9eed" stroke-width="1"/>
+  <text x="173" y="428" text-anchor="middle" font-size="10" fill="#1d3a8a">tool: http_request (web search)</text>
+
+  <!-- Return arrows: Specialists → Orchestrator (result) -->
+  <line x1="175" y1="338" x2="310" y2="240" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrG)"/>
+  <line x1="430" y1="338" x2="430" y2="240" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrG)"/>
+  <line x1="685" y1="338" x2="550" y2="240" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrG)"/>
+
+  <!-- Return labels -->
+  <text x="230" y="308" text-anchor="middle" font-size="10" fill="#047857">research output</text>
+  <text x="408" y="308" text-anchor="middle" font-size="10" fill="#047857">analysis</text>
+  <text x="636" y="308" text-anchor="middle" font-size="10" fill="#047857">final content</text>
+
+  <!-- Arrow: zone → response -->
+  <line x1="430" y1="515" x2="430" y2="556" stroke="#22c55e" stroke-width="2" marker-end="url(#arrG)"/>
+
+  <!-- Final Response -->
+  <rect x="278" y="556" width="304" height="52" rx="10" fill="#c3fae8" stroke="#22c55e" stroke-width="2"/>
+  <text x="430" y="580" text-anchor="middle" font-size="15" font-weight="700" fill="#065f46">Published Content</text>
+  <text x="430" y="598" text-anchor="middle" font-size="12" fill="#047857">Research brief · Key insights · Polished article</text>
+
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#555"/>
+    </marker>
+    <marker id="arrP" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#8b5cf6"/>
+    </marker>
+    <marker id="arrG" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#22c55e"/>
+    </marker>
+  </defs>
+
+</svg>

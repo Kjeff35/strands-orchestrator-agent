@@ -2,6 +2,8 @@
 
 A multi-agent pipeline that produces polished written content by coordinating three specialists: a researcher, an analyst, and a writer.
 
+![Architecture](architure_content_production.svg)
+
 ## How It Works
 
 ```
