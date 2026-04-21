@@ -2,6 +2,8 @@
 
 A multi-agent customer support pipeline that classifies incoming messages, attempts resolution, and produces either a final customer response or an escalation note for a human agent.
 
+![Architecture](architecture_customer_support.svg)
+
 ## How It Works
 
 ```
